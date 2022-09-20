@@ -1,0 +1,221 @@
+body{
+    background-color: #eef5f9;
+}
+.box-imgUser{
+    width: 38px;
+    height: 38px;
+}
+.p-layout{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.psSpan{
+    padding-left: 4px;
+    font-size: 15px;
+}
+.nav .ul{
+    justify-content: space-between;
+    transition: all 0.5s;
+}
+.submenuDropdown{
+    width: 300px;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.29);
+}
+.submenuDropdownAuto{
+    width: auto;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.29);
+}
+/* Menu Toggle */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -5px;
+    top: -3px;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+/* Humberger Menu Animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+.nav-item:hover .nav-link{
+    color: rgb(109, 109, 252);
+}
+.dropdown-item:hover{
+    background-color: white;
+    color: rgb(109, 109, 252);
+}
+
+/* Toggle User */
+.toggle-user{
+    position: relative;
+}
+.user-box{
+    width: 300px;
+    height: 120px;
+    background-color: white;
+    z-index: 1500;
+    position: absolute;
+    right: calc(10px + 3%);
+    top: 50px;
+    transform-origin: 95% -10%;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s;
+}
+.user-box.showUser{
+    transform: scale(100%);
+    opacity: 1;
+}
+.button-user a{
+    font-size: 15px;
+}
+/* Akhir Navbar */
+
+/* Dashboard */
+.con-dashboard{
+    margin-top: 111px;
+}
+
+/* Home Dashboard */
+.image-circle{
+    width: 100px;
+    height: 100px;
+}
+
+/* Responsif Breakpoint */
+
+/* Size Tablet */
+@media screen and (max-width: 768px){
+    .menu-toggle{
+        display: flex;
+        margin-right: 4px;
+    }
+    .box-imgUser{
+        width: 48px;
+        height: 48px;
+    }
+    .my-second-navbar{
+        display: inline;
+    }
+    .nav .ul{
+        position: absolute;
+        background-color: #ffffff;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100vh;
+        justify-content: start;
+        transform: translateX(-100%);
+    }
+    .nav .ul.slide{
+        transform: translateX(0);
+    }
+    .submenu{
+        display: flex;
+        flex-direction: column;
+    }
+    .submenuDropdown{
+        width: auto;
+        border: none;
+        box-shadow: none;
+        padding-left: 35px;
+    }
+    .submenuDropdownAuto{
+        width: auto;
+        border: none;
+        box-shadow: none;
+        padding-left: 35px;
+    }
+    .nav-item{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .nav-link i{
+        padding-left: 20px;
+    }
+    /* Akhir Navbar */
+    .con-dashboard{
+        margin-top: 65.1px;
+    }
+}
+
+/* Size Mobile */
+@media screen and (max-width: 576px){
+    .box-imgUser{
+        width: 31px;
+        height: 31px;
+    }
+    .user-box{
+        width: 250px;
+        height: 100px;
+        background-color: white;
+        z-index: 1500;
+        position: absolute;
+        right: calc(10px + 3%);
+        top: 50px;
+        transform-origin: 95% -10%;
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    .user-box.showUser{
+        transform: scale(100%);
+        opacity: 1;
+    }
+    .user-box span{
+        font-size: 13px;
+    }
+    .user-box small{
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+    .info-user{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .button-user a{
+        font-size: 10px;
+    }
+    /* Akhir Navbar */
+
+    /* Dashboard */
+    .con-dashboard{
+        margin-top: 48.5px;
+    }
+}
+

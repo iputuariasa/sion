@@ -1,0 +1,211 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+.navbar{
+    font-family: 'inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* padding-top: 5vh; */
+    /* padding-bottom: 5vh; */
+    background-color: #f2f5f7;
+    z-index: 1100;
+    transition: all 0.5s ease;
+}
+.navbar.hide{
+    font-family: 'inter', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* padding-top: 5vh; */
+    /* padding-bottom: 5vh; */
+    background-color: #f2f5f7;
+    z-index: 1100;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+.navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #0072ff;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    padding: 0 .75rem;
+    /* border-radius: 10px; */
+    box-shadow: 0 10px 50px 0 rgb(5, 4, 62 / 25%);
+    height: 100vh;
+}
+.navbar li:nth-child(7){
+    margin-top: 5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #0b60ca;
+}
+.navbar li + li{
+    margin-top: .75rem;
+}
+.navbar a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    position: relative;
+}
+.navbar a:hover, a:focus, a.active{
+    background-color: #0b60ca;
+    outline: none;
+}
+.navbar a:hover span, a:focus span {
+    transform: scale(1);
+    opacity: 1;
+}
+.navbar span{
+    transform: scale(1);
+    opacity: 1;
+}
+.navbar i{
+    font-size: 1.375rem;
+}
+.navbar span{
+    position: absolute;
+    background-color: #0b60ca;
+    white-space: nowrap;
+    padding: .5rem 1rem;
+    left: calc(100% + 1.5rem);
+    transform-origin: center left;
+    transform: scale(0);
+    opacity: 0;
+    transition: .1s ease; 
+}
+.navbar span::before{
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: #0b60ca;
+    left: -5px;
+    top: 50%;
+    transform: translateY(0%) rotate(45deg);
+    border-radius: 3px;
+}
+
+.main{
+    position: absolute;
+    width: calc(100% - 75px);
+    left: 75px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: all 0.5s ease;
+}
+.main.show{
+    position: absolute;
+    width: calc(100% - 0px);
+    left: 0px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+    transition: all 0.5s ease;
+}
+.arrow{
+    display: none;
+}
+.toggle i{
+    font-size: 1.375rem;
+}
+.topbar{
+    height: 48px;
+    display: flex;
+    align-items: center;
+    /* padding-top: 12px; */
+}
+.toggle{
+    height: 3rem;
+    display: none;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 48px;
+}
+.title-sm{
+    display: none;
+}
+.logo{
+    height: 40px;
+    width: 40px;
+}
+.profil{
+    height: 40px;
+    width: 40px;
+    background-color: #0b60ca;
+    
+}
+.logo, .profil img {
+    height: 100%;
+}
+.profil ul{
+    width: 250px;
+    padding: 10px;
+}
+/* Responsif Breakpoint */
+
+/* Size Tablet */
+@media screen and (max-width: 768px){
+    .arrow{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .arrow{
+        display: flex;
+    }
+    .toggle{
+        height: 3rem;
+        display: none;
+        transform: scale(0);
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+    .title-lg{
+        display: none;
+    }
+    .title-sm{
+        display: flex;
+    }
+    .toggle.show{
+        height: 3rem;
+        transform: scale(1);
+        display: flex;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+    .logo{
+        height: 35px;
+        width: 35px;
+    }
+    .profil{
+        height: 35px;
+        width: 35px;
+        background-color: #0b60ca;
+        
+    }
+}

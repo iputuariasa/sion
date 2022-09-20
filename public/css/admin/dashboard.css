@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+.box-imgProfil{
+    width: 120px;
+    height: 120px;
+}
+.box-detailtabel table tr {
+    font-size: 1em;
+}
+.box-detailtabel table tr td{
+    padding-top: 20px;
+}
+.section-motivasi{
+    height: 200px;
+    margin-bottom: 150px !important;
+}
+.text-inovasi h6 span{
+    font-size: 1.5em;
+    font-family: 'Secular One', sans-serif;
+}
+.pembicara-inovasi{
+    border-bottom: 2px dotted gold;
+}
+.box-motivasi{
+    height: 200px;
+}
+
+#footer{
+    margin-left: -20px !important;
+    margin-right: -20px !important;
+    padding-bottom: 0px !important;
+}
+#footer button{
+    display: none;
+}
+
+/* Responsif Breakpoint */
+/* Destop Extra extra large */
+@media screen and (max-width: 1920px){
+    .box-imgProfil{
+        width: 150px;
+        height: 150px;
+        top: 53% !important;
+    }
+}
+
+/* Destop Extra large */
+@media screen and (max-width: 1400px){
+    .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 40% !important;
+        transition: 0.5s all;
+    }
+    .main.active .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 50% !important;
+    }
+}
+
+/* Size Tablet */
+@media screen and (max-width: 768px){
+    .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 60% !important;
+    }
+    .main.active .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 60% !important;
+    }
+    .box-detailtabel table tr {
+        font-size: 1em;
+    }
+}
+
+/* Size MObile */
+@media screen and (max-width: 414px){
+    .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 45% !important;
+    }
+    .main.active .box-imgProfil{
+        width: 120px;
+        height: 120px;
+        top: 45% !important;
+    }
+    .box-detailtabel table tr {
+        font-size: 0.7em;
+    }
+    #footer small{
+        font-size: 0.7em;
+    }
+}

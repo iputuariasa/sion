@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root{
+    --blue: #2E0249;
+    --white: #f4f4f4;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.myNav{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.myNav.active{
+    width: 80px;
+}
+.myNav ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.myNav ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.myNav ul li form button{
+    color: var(--white);
+}
+.myNav ul li.active,
+.myNav ul li:hover {
+    background: var(--white);
+}
+.myNav ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.myNav ul li .box-menu{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.myNav ul li.active .box-menu,
+.myNav ul li:hover .box-menu{
+    color: var(--blue);
+}
+.myNav ul li .box-menu .iconBrand{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    display: block;
+    text-align: center;
+}
+.myNav ul li .box-menu .icon{
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+}
+.myNav ul li .box-menu .iconBrand img{
+    margin-top: 10px;
+    width: 35px;
+}
+.myNav ul li .box-menu .icon img{
+    margin-top: 12px;
+    width: 35px;
+}
+.myNav ul li .box-menu .icon i{
+    font-size: 1.7em;
+}
+.myNav ul li .box-menu .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.myNav ul li .box-menu .brand{
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: oblique;
+    text-shadow: 2px 2px  0px goldenrod;
+}
+
+.myNav ul li.active .box-menu::before,
+.myNav ul li:hover .box-menu::before {
+    content: '';
+    position: absolute;
+    background: transparent;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.myNav ul li.active .box-menu::after,
+.myNav ul li:hover .box-menu::after{
+    content: '';
+    position: absolute;
+    background: transparent;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+.myNav-title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+    font-style: oblique;
+    text-shadow: 2px 2px  0px goldenrod;
+}
+
+/* main */
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle{
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
+/* Toggle User */
+.toggle-user{
+    position: relative;
+    height: 60px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-user img{
+    width: auto;
+    height: 60%;
+}
+.user-box{
+    width: 300px;
+    height: 120px;
+    background-color: var(--white);
+    z-index: 1500;
+    position: absolute;
+    right: calc(10px + 3%);
+    top: 50px;
+    transform-origin: 95% -10%;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.5s;
+}
+.user-box.showUser{
+    transform: scale(100%);
+    opacity: 1;
+}
+.button-user a{
+    font-size: 15px;
+}
+
+/* card */
+.numbers{
+    font-weight: 500;
+    font-size: 2.2em;
+    color: var(--blue);
+}
+.cardName{
+    color: var(--blue);
+    /* margin-top: 5px; */
+    font-size: 1.1em;
+}
+.iconBx{
+    font-size: 2.5em;
+    color: var(--black2);
+}
+.boxCard .card:hover{
+    background-color: rgb(144, 214, 40);
+}
+
+
+/* Responsif Breakpoint */
+
+/* Size Tablet */
+@media screen and (max-width: 768px){
+    .myNav{
+        width: 80px;
+    }
+    .myNav.active{
+        width: 80px;
+    }
+    .main{
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+    .main.active{
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+    .boxCard{
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .myNav-title{
+        display: none;
+    }
+    .myNav{
+        width: 60px;
+        border-left: none;
+    }
+    .myNav.active{
+        width: 60px;
+    }
+    .main{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .main.active{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .myNav ul li.active .box-menu::before,
+    .myNav ul li:hover .box-menu::before {
+        content: '';
+        position: absolute;
+        background: transparent;
+        right: 0;
+        top: -45px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 35px 35px 0 10px var(--white);
+        pointer-events: none;
+    }
+    .myNav ul li.active .box-menu::after,
+    .myNav ul li:hover .box-menu::after{
+        content: '';
+        position: absolute;
+        background: transparent;
+        right: 0;
+        bottom: -45px;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 35px -35px 0 10px var(--white);
+        pointer-events: none;
+    }
+}
